@@ -1,0 +1,196 @@
+/* This css if only for grid layout structures. All design is in form.css */
+ 
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  }
+ 
+div.row {
+  width: 100%;
+  margin: auto;
+  clear: both;
+}
+ 
+div.row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+ 
+.col  {float: left;}
+div.w100 {width: 100%;}
+ 
+/*These are classes that alter how a div aligns itself*/
+.center {display: flex; justify-content: center; align-items: center; align-content: center;}
+.right {text-align: right;}
+ 
+.generator {max-width: 50em; margin: 1em auto;}
+ 
+.container {max-width: 70em; margin: 1em auto; border-radius: .7em;   background-color: #4f505d;}
+ 
+/*This will allow the container to be responsive once the window is smaller than the max-width.*/
+@media all and (max-width: 73em) {.container {width: 96%;} .generator {width: 70%;}}
+@media all and (max-width: 50em) {.generator {width: 80%;}}
+@media all and (max-width: 30em) {.generator {width: 90%;}}
+ 
+.about label {
+  display: flex;
+  flex-flow: row-wrap;
+  align-items: center;
+}
+ 
+.about {
+  width: 33%;
+  display: block;
+  padding: .5em;
+}
+ 
+@media all and (max-width: 70em) {input[type=text] {width: 80%;}}
+@media all and (max-width: 50em){.about {width: 100%;} input[type=text] {padding: .3em; width: 100%;}}
+ 
+.button {width: 17.1%; margin: 1em;}
+ 
+/*This will help the fieldsets stay in a reasonably organized space*/
+@media all and (max-width: 73em) {.button {width: 46%;}}
+@media all and (max-width: 56em) {.button {width: 44%;}}
+@media all and (max-width: 36em) {.button {width: 42%}}
+@media all and (max-width: 27em) {.button {width: 88%}}
+ 
+/* This css is only for the styling*/
+ 
+/* Google fonts family
+font-family: 'Share Tech Mono', monospace;
+font-family: 'VT323', monospace;
+font-family: 'Droid Sans Mono', monospace;
+*/
+ 
+html {background-color: #b6b6b4;}
+ 
+.generator {
+  background-color: #425213;
+  text-align: center;
+  border-color: #1b2305;
+  border-style: solid;
+  border-width: .3em.2em .1em .15em;
+  border-radius: .1em;
+/*These background properties are for the generated backgrounds in javascript*/
+  background-position: center top; 
+  background-repeat: no-repeat;
+}
+ 
+/*These are for the generated area only*/
+ 
+#name {color: #bbcf78; font-size: 4em; text-align: center; padding: 0 2em;}
+#gender-race {color: #bbcf78; font-size: 2.5em; text-align: center; padding: 0 0 2em 0;}
+#creature-head {position: relative; z-index: 97;}
+#creature-body {position: relative; z-index: 96;}
+#tail {position: relative; z-index: 4; top: -13.3em; overflow: visible; height: 0em;}
+#wings {position: relative; z-index: 5; top: -13.3em; overflow: visible; height: 0em;}
+#breasts {position: relative; z-index: 98; top: -13.3em; overflow: visible; height: 0em;}
+#horns {position: relative; z-index: 99; top: -26.6em; overflow: visible; height: 0em;}
+#description {color: #bbcf78; font-size: 1em; font-family: 'Droid Sans Mono', monospace; text-align: justify; white-space: pre-wrap; padding: 2em;}
+#description::first-letter {font-size: 2em;}
+ 
+p {
+  box-sizing: border-box;
+}
+ 
+header {text-align: center;}
+ 
+h1 {
+  font-size: 6em;
+  font-family: "VT323";
+  color: #751052;
+}
+ 
+h2 {
+  font-size: 2.5em;
+  font-style: italic;
+  font-family: "VT323";
+  color: #04004d;
+}
+ 
+h3 {
+  font-size: 1em;
+  font-family: "VT323";
+  color: #04004d;
+}
+ 
+p {
+  font-weight: bold;
+  font-family: "VT323";
+  font-size: 1.7em;
+}
+ 
+form {
+  font-family: "Droid Sans Mono";
+  color: #c5d2de;
+}
+ 
+input[type=text] {
+  font-family: "Share Tech Mono";
+  background-color: #425213;
+  color: #bbcf78;
+  font-size: 1.5em;
+  border-color: #1b2305;
+  border-style: solid;
+  border-width: .15em .1em .05em .075em;
+  border-radius: .1em;
+}
+ 
+input[type=submit] {
+  background-color: #891d4f;
+  border-top-color: #bf2a6f;
+  border-right-color: #771040;
+  border-bottom-color: #54102f;
+  border-left-color: #9e2d61;
+  border-style: solid;
+  border-width: .3em .2em .2em .15em;
+  border-radius: .4em;
+  color: #d8edff;
+  margin: 2em;
+  padding: .3em;
+  font-size: 1.4em;
+}
+ 
+input[type=submit]:active {
+  background-color: #7f1a49;
+  border-top-color: #9b225a;
+  border-right-color: #3a0e23;
+  border-bottom-color: #3a0e23;
+  border-left-color: #751f47;
+  border-style: solid;
+  border-width: .4em .1em .1em .25em;
+  border-radius: .4em;
+  color: #c5d2de;
+}
+@media all and (max-width: 24em) {input[type=submit] {font-size: 6vw;}}
+ 
+textarea {
+  display: inline;
+  width: 90%;
+  font-size: 1.5em;
+  font-family: "Share Tech Mono";
+  background-color: #425213;
+  color: #bbcf78;
+  text-align: justify;
+  padding: .5em .7em;
+  border-color: #1b2305;
+  border-style: solid;
+  border-width: .3em.2em .1em .15em;
+  border-radius: .1em;
+}
+@media all and (max-width: 50em) {textarea {width: 90%;}}
+ 
+legend {
+  font-weight: bold;
+  font-family: "VT323";
+  font-size: 2em;
+}
+ 
+fieldset {
+  border-style: dashed;
+  border-color: #b6b6b4;
+  padding: .5em;
+}

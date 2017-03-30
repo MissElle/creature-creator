@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans+Mono|Share+Tech+Mono|VT323" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>*mwahaha*</title>
+  </head>
+ 
+  <body>
+ 
+    <div class="row"><div class="w100">
+      <header>
+        <h1>Creature Creator</h1>
+        <h2>Retro Style</h2>
+      </header>
+    </div></div>
+ 
+    <div class="generator" id="generator">
+      <div class="row"><p id="name"></p></div>
+      <div class="row"><p id="gender-race"></p></div>
+      <div class="row" id="creature-head"></div>
+      <div class="row" id="creature-body"></div>
+      <div class="row" id="horns"></div>
+      <div class="row" id="tail"></div>
+      <div class="row" id="wings"></div>
+      <div class="row" id="breasts"></div>
+      <div class="row" id="description"></div>
+    </div>
+ 
+    <div class="container">
+ 
+      <form onsubmit="createCreature();" name="creature">
+      <div class="row">
+        <div class="col about"><label>Name:<input type="text" name="name"></label></div>
+        <div class="col about"><label>Gender:<input type="text" name="gender"></label></div>
+        <div class="col about"><label>Race:<input type="text" name="race"></label></div>
+      </div>
+     
+      <div class="row">
+        <div class="center w100"><textarea name="description" rows="7" placeholder="Tell us a bit about your character... What do they like to do? What makes them special?"></textarea></div>
+      </div>
+     
+      <div class="row">
+        <div class="col button"><fieldset>
+          <legend>Color</legend>                             
+ 
+          <div class="row"><div class="col w100"><label><input type="radio" name="color" value="red">Red</label></div></div>
+          <div class="row"><div class="col w100"><label><input type="radio" name="color" value="orange">Orange</label></div></div>
+          <div class="row"><div class="col w100"><label><input type="radio" name="color" value="yellow">Yellow</label></div></div>
+          <div class="row"><div class="col w100"><label><input type="radio" name="color" value="green">Green</label></div></div>
+          <div class="row"><div class="col w100"><label><input type="radio" name="color" value="blue">Blue</label></div></div>         
+          <div class="row"><div class="col w100"><label><input type="radio" name="color" value="violet">Violet</label></div></div>
+         
+        </fieldset></div>
+       
+        <div class="col button"><fieldset>
+          <legend>Skin</legend>
+     
+          <div class="row"><div class="w100"><label><input type="radio" name="skin" value="flesh">Flesh</label></div></div>      
+          <div class="row"><div class="w100"><label><input type="radio" name="skin" value="fur">Fur</label></div></div>         
+          <div class="row"><div class="w100"><label><input type="radio" name="skin" value="feathers">Feathers</label></div></div>         
+          <div class="row"><div class="w100"><label><input type="radio" name="skin" value="scales">Scales</label></div></div>        
+          
+        </fieldset></div>
+       
+        <div class="col button"><fieldset>
+          <legend>Terrain</legend>
+            <div class="row"><div class="w100"><label><input type="radio" name="terrain" value="land">Land</label></div></div>
+            <div class="row"><div class="w100"><label><input type="radio" name="terrain" value="sea">Sea</label></div></div>
+            <div class="row"><div class="w100"><label><input type="radio" name="terrain" value="sky">Sky</label></div></div>
+        </fieldset></div>
+ 
+        <div class="col button"><fieldset>
+          <legend>Form</legend>
+            <div class="row"><div class="w100"><p>Face</p></div></div>
+            <div class="row"><div class="w100"><label><input type="radio" name="face" value="sharp">Sharp</label></div></div>
+            <div class="row"><div class="w100"><label><input type="radio" name="face" value="soft">Soft</label></div></div>
+            <div class="row"><div class="w100"><p>Body</p></div></div>
+            <div class="row"><div class="w100"><label><input type="radio" name="body" value="top">Top-Heavy</label></div></div>
+            <div class="row"><div class="w100"><label><input type="radio" name="body" value="bottom">Bottom-Heavy</label></div></div>
+        </fieldset></div>
+ 
+        <div class="col button"><fieldset><legend>Attributes</legend>
+         
+          <div class="row"><div class="w100"><label><input type="checkbox" name="atttail" value="tail">Tail</label></div></div>
+          <div class="row"><div class="w100"><label><input type="checkbox" name="attwings" value="wings">Wings</label></div></div>         
+          <div class="row"><div class="w100"><label><input type="checkbox" name="attbreasts" value="breasts">Breasts</label></div></div>
+          <div class="row"><div class="w100"><label><input type="checkbox" name="atthorns" value="horns">Horns</label></div></div>                  
+          <div class="row"><div class="w100"><label><input type="checkbox" name="attbrain" value="brain">Only a Brain</label></div></div>
+         
+        </fieldset></div>
+      </div>     
+ 
+      <div class="row"><div class="w100 right"><input type="submit" value="Let's Make a Character!" name="submit"></div></div>
+ 
+      </form>
+    </div>
+   
+  <script src="generate.js"></script>
+ 
+  </body>
+ 
+</html>

@@ -37,33 +37,33 @@ function createCreature () {
 //The values will go into the images naming convention to generate the content of the creature
  
 if (creatureFace !== '') {
-  contentHead.innerHTML = '<img src="images/head-' + creatureColor + '-' + creatureSkin + '-' + creatureTerrain + '-' + creatureFace + '.png">';
+  contentHead.innerHTML = '<img src="images/head-' + creatureSkin + '-' + creatureTerrain + '-' + creatureFace + '.png">';
 }
  
 if (creatureBody !=='') {
-  contentBody.innerHTML = '<img src="images/body-' + creatureColor + '-' + creatureSkin + '-' + creatureTerrain + '-' + creatureBody + '.png">';
+  contentBody.innerHTML = '<img src="images/body-' + creatureSkin + '-' + creatureTerrain + '-' + creatureBody + '.png">';
 }
  
 if (creatureAttTail.checked == true) {
-  contentTail.innerHTML = '<img src="images/tail-' + creatureColor + '-' + creatureSkin + '-' + creatureTerrain + '.png">';
+  contentTail.innerHTML = '<img src="images/tail-' + creatureSkin + '-' + creatureTerrain + '.png">';
 }else {
   contentTail.innerHTML = '';
 }
  
 if (creatureAttWings.checked == true) {
-  contentWings.innerHTML = '<img src="images/wings-' + creatureColor + '-' + creatureSkin + '-' + creatureTerrain + '.png">';
+  contentWings.innerHTML = '<img src="images/wings-' + creatureSkin + '-' + creatureTerrain + '.png">';
 }else {
   contentWings.innerHTML = '';
 }
  
 if (creatureAttBreasts.checked == true) {
-  contentBreasts.innerHTML = '<img src="images/breasts-' + creatureColor + '-' + creatureSkin + '-' + creatureTerrain + '-' + creatureBody + '.png">';
+  contentBreasts.innerHTML = '<img src="images/breasts-' + creatureSkin + '-' + creatureTerrain + '-' + creatureBody + '.png">';
 }else {
   contentBreasts.innerHTML = '';
 }
  
 if (creatureAttHorns.checked == true) {
-  contentHorns.innerHTML = '<img src="images/horns-' + creatureColor + '-' + creatureSkin + '-' + creatureTerrain + '-' + creatureFace + '.png">';
+  contentHorns.innerHTML = '<img src="images/horns-' + creatureSkin + '-' + creatureTerrain + '-' + creatureFace + '.png">';
 }else {
   contentHorns.innerHTML = '';
 }
@@ -75,8 +75,31 @@ if (creatureAttBrain.checked == true) {
   contentWings.innerHTML = '';
   contentBreasts.innerHTML = '';
   contentHorns.innerHTML = '';
-  contentBody.innerHTML = '<img src="images/brain-' + creatureColor + '.png">';
+  contentBody.innerHTML = '<img src="images/brain.png">';
 }            
  
 }
  
+//This function will change the color of the sprite image based on the user selection
+ 
+function colorCreature(imgElement, tintcolor) {
+  var imgList = document.images;
+  var canvas = document.createElement('canvas');
+  canvas.width = imgElement.offsetWidth;
+  canvas.height = imgElement.offsetHeight;
+  var x = imgElement.width;
+  var y = imgElement.height;
+ 
+  var ctx = canvas.getContext('2d');
+  ctx.drawImage(imgElement,0,0);
+ 
+  var map = ctx.getImageData(0,0,x,y);
+  var imdata = map.data;
+ 
+  for(var i=0; i<imgList.length; i++) {
+    console.log(imgList.length);
+  }
+ 
+  imgElement.src = canvas.toDataURL();
+ 
+}
